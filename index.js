@@ -26,8 +26,20 @@
 // changes to your forked repo and submit a pull request.
 // Alternatively send an email with your solution to natorgom@gmail.com
 
-function palindromeSwapper(str)  {
-  // your code here
+function palindromeSwapper(str) {
+
+  for (let i = 0; i < str.length - 1; i++) {
+    let newString = str.split('');
+    [newString[i], newString[i + 1]] = [newString[i + 1], newString[i]];
+    newString = newString.join('').toString();
+    if (isPalindrome(newString)) return newString
+  }
+  function isPalindrome(text) {
+
+    if (text === text.split('').reverse().join('')) return true
+
+  }
+  return -1
 }
 
 module.exports = palindromeSwapper;
